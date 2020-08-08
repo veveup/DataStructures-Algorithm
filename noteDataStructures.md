@@ -72,5 +72,3 @@ if(tmp.next.no==no) tmp.next = tmp.next.next; return;
 
 
 
-![]()
-
