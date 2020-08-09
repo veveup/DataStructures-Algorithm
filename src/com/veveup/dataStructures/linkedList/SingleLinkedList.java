@@ -1,5 +1,7 @@
 package com.veveup.dataStructures.linkedList;
 
+import java.security.cert.TrustAnchor;
+
 public class SingleLinkedList {
     public static void main(String[] args) {
         // 创建几个节点
@@ -25,6 +27,13 @@ public class SingleLinkedList {
 //        singleLinkedListEntry.deleteByNo(5);
 //        singleLinkedListEntry.show();
 
+//        HeroNode lastIndexNode = singleLinkedListEntry.findLastIndexNode(singleLinkedListEntry.getHead(), 3);
+//        System.out.println("查找到的倒数节点"+lastIndexNode);
+//        SingleLinkedListEntry.reversetList(singleLinkedListEntry.getHead());
+//        singleLinkedListEntry.show();
+
+        System.out.println("逆序打印");
+        singleLinkedListEntry.reversetPrintList(singleLinkedListEntry.getHead());
         System.out.printf("有效节点个数%d\n",SingleLinkedListEntry.getLength(singleLinkedListEntry.getHead()));
     }
 }
@@ -33,6 +42,59 @@ public class SingleLinkedList {
 class SingleLinkedListEntry{
     // 初始化一个头节点
     private HeroNode head = new HeroNode(0,"","");
+
+    // 逆序打印链表
+    public static boolean reversetPrintList(HeroNode node){
+        if(node.next!=null){
+            reversetPrintList(node.next);
+            System.out.println(node);
+            return true;
+        }{
+            System.out.println(node);
+            return true;
+        }
+    }
+
+    //将单链表反转
+    public static void reversetList(HeroNode head){
+        if(head.next==null || head.next.next==null){
+            System.out.println("节点太少 无法反转");
+            return;
+        }
+
+        HeroNode tmp = head.next;
+        HeroNode next = null;
+        HeroNode reverseHead = new HeroNode(0,"","");
+        // 因为这里操作的是节点本身 而不是下一个节点 所以判断的是 节点本身是否为空
+        while (tmp !=null){
+            // 保存 当前节点的下一个节点
+            next = tmp.next;
+            // 将当前节点插入到 反转连的头部（reverseHead 和 第一个节点之间）
+            tmp.next = reverseHead.next;
+            reverseHead.next = tmp;
+            // 将保存的下一个节点取出来 继续循环
+            tmp = next;
+        }
+        head.next = reverseHead.next;
+    }
+
+    // 查找单链表中的倒数第index个节点
+    public static HeroNode findLastIndexNode(HeroNode head,int index){
+        if(head.next==null){
+            System.out.println("链表为空！不能获得倒数节点");
+            return null;
+        }
+        int len = getLength(head);
+        if(len<index || index<1){
+            System.out.println("超出链表范围");
+            return null;
+        }
+        HeroNode tmp = head.next;
+        for (int i = 0; i < len-index; i++) {
+            tmp = tmp.next;
+        }
+        return tmp;
+    }
 
     //添加节点到单向链表的最后
     public void add(HeroNode heroNode){
@@ -120,6 +182,8 @@ class SingleLinkedListEntry{
         // 打印最后一个节点
         System.out.println(tmp);
     }
+
+
 
     public HeroNode getHead() {
         return head;

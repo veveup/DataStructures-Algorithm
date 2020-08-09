@@ -10,14 +10,19 @@
 
 - [x] **稀疏数组 SparseArray**
 - [x] **队列 Queue**
-- [ ] **链表 LinkedList**
+- [x] **链表 LinkedList**
     - [x] **单链表 SingleLinkedList**
+    - [x] **双向链表 DoubleLinkedList**
+    - [x] **单向循环链表 CircleSingleLinkedList**
+    - [x] **约瑟夫问题 Josephu**
+- [ ] **栈 Stack**
 
 
 
 
 
-
-
+<br>
+<br>
+<br>
 
 ![](./img/bookIndex.jpg)
