@@ -198,5 +198,83 @@ do{
 
 ## ✅ 栈 Stack
 
+可以使用数组简单实现栈的结构 只需要使用一个 pop作为指针 记录栈当前的位置<br>也可以使用SingleLinkedList实现 栈顶 一直指向 head/first 可以简单实现 push pop 操作
 
+**中缀表达式的计算** 不支持括号
+
+```java
+
+1. 遍历整个表达式
+2. 若当前表达式是数字存入数字缓存（适配多位数字）
+3. 遇到操作符 先将数字压入数字栈 然后判断符号栈是否有符号
+  1.若没有符号 则直接压入
+  2.有符号 判断符号优先级 若栈中符号优先级高 则取出两个数字 和 一个操作符计算之
+  3.将计算结果 和 当前符号各压入栈中
+4. 表达式遍历完 将最后一个数字压入数字栈
+5. 根据 符号栈是否为空 循环取出两个数 一个操作符 计算结果压入数字栈
+6. 退出循环 数字栈中的既为最后结果
+// 扩展一个普通栈的功能 增加计算器相关方法
+class CalculatorStack Extends ArraryStackEntry{
+	//判断符号优先级
+    public int pripority(int oper){
+        if(oper == '*' || oper == '/'){
+            return 1;
+        }else if(oper == '+'|| oper=='-'){
+            return 0;
+        }else {
+            return -1;
+        }
+    }
+  
+     //判断是不是一个运算符
+    public boolean isOper(int val){
+        return val=='+'||val=='-'||val=='*'||val=='/';
+    }
+
+    //计算方法
+    public int cal(int num1,int num2,int oper){
+        int res = 0;
+        switch (oper)
+            case '+':res = num1+num2;
+            case '-':res = num2-num1;
+            case '*':res = num1*num2;
+            case '/':res = num2/num1;
+        return res;
+    }
+}
+```
+
+**后缀表达式计算 逆波兰表达式**
+
+```java
+// 将表达式转为 List 然后循环遍历List
+for (String item : ls) {
+            if(item.matches("\\d+")){
+                stack.push(item);
+            }else{
+                int pop = Integer.parseInt(stack.pop());
+                int  pop1 = Integer.parseInt(stack.pop());
+                int res = 0;
+                if(item.equals("+")){
+                    res = pop+pop1;
+                }else if(item.equals("-")){
+                    res = pop1 - pop;
+                }else if(item.equals("*")){
+                    res = pop*pop1;
+                }else if(item.equals("/")){
+                    res = pop1 / pop;
+                }else {
+                    throw new RuntimeException("表达式错误");
+                }
+                stack.push(res+"");
+            }
+        }
+        return Integer.parseInt(stack.pop());
+```
+
+**中缀表达式转后缀表示**
+
+```java
+
+```
 

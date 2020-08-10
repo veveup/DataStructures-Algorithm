@@ -4,8 +4,7 @@
 之前做题一直是在用 Python ，但这次会全部使用 Java 语言<br>
 
 ## To-do
-**DataStructures**
-
+**[DataStructures](./noteDataStructures.md)**
 
 
 - [x] **稀疏数组 SparseArray**
@@ -16,7 +15,10 @@
     - [x] **单向循环链表 CircleSingleLinkedList**
     - [x] **约瑟夫问题 Josephu**
 - [ ] **栈 Stack**
-
+    - [x] **数组实现栈 ArrayStack**
+    - [x] **中缀表达式的简单计算 CalculatorInfixExpression**
+    - [x] **后缀表达式的计算 逆波兰表达式 CalculatorPolandNotation**
+    - [ ] **中缀表达式转后缀 infixExp2suffixExp**
 
 
 
