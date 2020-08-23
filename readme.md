@@ -14,13 +14,18 @@
     - [x] **双向链表 DoubleLinkedList**
     - [x] **单向循环链表 CircleSingleLinkedList**
     - [x] **约瑟夫问题 Josephu**
-- [ ] **栈 Stack**
+- [x] **栈 Stack**
     - [x] **数组实现栈 ArrayStack**
     - [x] **中缀表达式的简单计算 CalculatorInfixExpression**
     - [x] **后缀表达式的计算 逆波兰表达式 CalculatorPolandNotation**
     - [ ] **中缀表达式转后缀 infixExp2suffixExp**
-
-
+- [x] **递归 Recursion**
+    - [x] **回溯 Backtrack**
+    - [x] **迷宫问题 MazePuzzle**
+    - [x] **八皇后问题 8QueuePuzzle**
+    
+**[Algorithm](./noteAlgorithm.md)**
+- [ ] **排序 Sort**
 
 
 <br>

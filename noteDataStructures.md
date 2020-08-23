@@ -275,6 +275,89 @@ for (String item : ls) {
 **中缀表达式转后缀表示**
 
 ```java
+Stack<String> s1 = new Stack<>();
+List<String> s2 = new ArrayList<>();
+for(String s:list){
+  if(s.matches("\\d+")){
+    s2.add(s); 			//结果栈
+  }else if(s.equals("(")){
+    s1.push("(");
+  }else if(s.equals(")")){
+    while (!s1.peek().equals("(")){
+      s2.add(s1.pop());
+    }
+    s1.pop();     // 弹出 左 括号
+  }else{
+    while (s1.size()!=0 && Operation.getValue(s1.peek())>= Operation.getValue(s)){
+      s2.add(s1.pop());
+    }
+    s1.push(s);
+  }
+}
+while(s1.size()!=0){
+  s2.add(s1.pop());
+}
+print(s2);
+```
 
+## ✅ 递归 Recursion
+
+底层使用了栈的结构，每个空间中的局部变量是独立的 这容易混淆，引用类型 是共享的数据
+
+ **简单迷宫问题**
+
+```java
+// 利用递归可以回溯的特性 路径走不通的时候 就返回
+public static boolean setWay(int[][] map,int i,int j){
+        if(map[6][5] == 2){
+            return true;
+        }else{
+            if(map[i][j]==0){
+                map[i][j] = 2;
+                if(setWay(map,i+1,j)){
+                    return true;
+                }else if(setWay(map,i,j+1)){
+                    return true;
+                }else if(setWay(map,i-1,j)){
+                    return true;
+                }else if(setWay(map,i,j-1)){
+                    return true;
+                }else{
+                    map[i][j] = 3;
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }
+    }
+```
+
+**八皇后问题**
+
+```java
+private boolean judgeOk(int n){
+  for(int i = 0;i<n;i++){
+    if(array[i] == array[n] || Math.abs(n-i)==Math.abs(array[n]-array[i])){
+      return false;
+    }
+  }
+  return true;
+}
+
+private void check(int n){
+  if(n== max){
+    printMap();
+    return;
+  }
+  for (int i = 0; i < max; i++) {
+    array[n] = i;
+    if(judgeOk(n)){
+      // 放置第n+1个皇后
+      check(n+1);
+    }
+    // 若冲突 则继续尝试放置这一行的下一列个皇后
+  }
+}	
 ```
 
