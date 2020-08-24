@@ -24,8 +24,17 @@
     - [x] **迷宫问题 MazePuzzle**
     - [x] **八皇后问题 8QueuePuzzle**
     
+
 **[Algorithm](./noteAlgorithm.md)**
 - [ ] **排序 Sort**
+
+  - [x] **冒泡排序 BubbleSort**
+
+  - [x] **选择排序 SelectSort**
+
+  - [ ] **插入排序 InsertSort**
+
+    
 
 
 <br>
