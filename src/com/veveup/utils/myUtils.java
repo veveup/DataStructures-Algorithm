@@ -41,4 +41,32 @@ public class myUtils {
         }
         return arr;
     }
+
+    /**
+     * 判断int数组是否有序
+     * 是升序数组！ / 不是有序数组！
+     * @param arr 输入一个数组
+     * @return
+     */
+    public static boolean isSorted(int[] arr){
+        boolean flag = true;
+        for (int i = 0; i < arr.length-1; i++) {
+            if(arr[i]>arr[i+1]){
+                flag = false;
+                break;
+            }
+        }
+        if(flag){
+            System.out.println("是升序数组！");
+            return true;
+        }
+        for(int i = 0;i<arr.length-1;i++){
+            if(arr[i]<arr[i+1]){
+                System.out.println("不是有序数组！");
+                return false;
+            }
+        }
+        System.out.println("是倒序数组！");
+        return true;
+    }
 }

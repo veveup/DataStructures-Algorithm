@@ -56,3 +56,32 @@ public static void selectSort(int[] arr){
 }
 ```
 
+**插入排序 Inserting Sort**
+
+```java
+// 从第二个开始依次遍历判断
+// 第i个元素的值为要插入的值 从i-1到0都为插入点 判断的依据是 插入值小于当前值
+// 其中判断中 会 将插入值和插入点的数组往后移动一位
+public static void InsertSort(int[] arr){
+    int insertVal = 0;
+    int insertIndex = 0;
+    for (int i=1;i<arr.length;i++){
+        insertVal = arr[i];
+        insertIndex = i-1;
+        while (insertIndex>=0 && arr[insertIndex]>insertVal){
+            arr[insertIndex+1] = arr[insertIndex];
+            insertIndex--;
+        }
+        if(insertIndex+1 != i){
+            arr[insertIndex+1] = insertVal;
+        }
+    }
+}
+```
+
+**Shell排序**
+
+```java
+
+```
+
