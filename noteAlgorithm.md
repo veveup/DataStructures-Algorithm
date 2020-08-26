@@ -82,6 +82,78 @@ public static void InsertSort(int[] arr){
 **Shell排序**
 
 ```java
+// 也是一种插入排序 优化了插入排序插入排序时 比较移动次数过多的问题 使用了二分的思想 
+// 将长度每次除2 得到step 
+// 然后以step为步长 分组 然后分组内交换或者移动排序
+// 然后再/2 获得新的步长 继续分组排序
+// 直至step=1 进行最后一步插入插入排序
+ public static void ShellSort2(int[] arr){
+    for(int step=arr.length/2;step>0;step /= 2){ 
+        for(int i = step;i<arr.length;i++){
+            int j = i;
+            int temp = arr[j];
+            if(arr[j]< arr[j-step]){
+                while (j-step>=0 && temp<arr[j-step]){
+                    arr[j] = arr[j-step];
+                    j-=step;
+                }
+            }
+            arr[j] = temp;
+        }
+    }
+}
+```
+
+**快速排序 Quicksort**
+
+```java
+// 是冒泡排序的优化 利用了分治的思想
+// 找一个中间值 这个中间值的位置不重要 然后以这个中间值为标准 
+// 0-right 的值都是小于中间值的 left-length-1的都为大于等于中间值的 
+// 然后再将左右两边 分别 重复上面步骤
+public static void quickSort(int[] arr,int left,int right){
+    int l = left;
+    int r = right;
+    int tmp = 0;
+    int pivot = arr[(left+right)/2];
+    while (l<r){
+        // 在 pivot 左边找到个 大于 pivot的
+        while ((arr[l]<pivot)){
+            l+=1;
+        }
+        // 在 pivot 右边找到个 小于 pivot的
+        while (arr[r]>pivot){
+            r-=1;
+        }
+        if(l>=r){
+            break;
+        }
+        tmp = arr[l];
+        arr[l] = arr[r];
+        arr[r] = tmp;
+        if(arr[l] == pivot){
+            r--;
+        }
+        if(arr[r] == pivot){
+            l++;
+        }
+    }
+    if(l==r){
+        l+=1;
+        r-=1;
+    }
+    if(left<r){
+        quickSort(arr,left,r);
+    }
+    if(right>r){
+        quickSort(arr,l,right);
+    }
+}
+```
+
+**归并排序 MergeSort**
+
+```
 
 ```
 

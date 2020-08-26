@@ -1,6 +1,7 @@
 package com.veveup.utils;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 public class myUtils {
@@ -45,10 +46,14 @@ public class myUtils {
     /**
      * 判断int数组是否有序
      * 是升序数组！ / 不是有序数组！
+     * 若数组长度 小于等于20 打印数组
      * @param arr 输入一个数组
      * @return
      */
     public static boolean isSorted(int[] arr){
+        if(arr.length<=20){
+            System.out.println("数组:"+Arrays.toString(arr));
+        }
         boolean flag = true;
         for (int i = 0; i < arr.length-1; i++) {
             if(arr[i]>arr[i+1]){

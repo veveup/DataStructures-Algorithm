@@ -34,6 +34,12 @@
 
   - [x] **插入排序 InsertSort**
 
+  - [x] **希尔排序 ShellSort**
+  
+  - [x] **快速排序 QuickSort**
+  
+  - [ ] **归并排序 MergeSort**
+  
     
 
 
