@@ -1,4 +1,4 @@
-# DataStructures-Algorithm
+# 	DataStructures-Algorithm
 最近在刷 leetcode ，才发现数据结构和算法这门课是多么重要，也特别悔恨上课睡的觉，所以再重新刷一遍这门课 希望能有所收获 <br>
 涉及的代码和笔记 也会放在这个repository 一是方便自己整理复习 二是希望能帮助到需要的同学<br>
 之前做题一直是在用 Python ，但这次会全部使用 Java 语言<br>
@@ -23,24 +23,22 @@
     - [x] **回溯 Backtrack**
     - [x] **迷宫问题 MazePuzzle**
     - [x] **八皇后问题 8QueuePuzzle**
-    
+- [x] **散列表 HashTable**
+
+    - [x] **员工系统 EmpSystem**
 
 **[Algorithm](./noteAlgorithm.md)**
-- [ ] **排序 Sort**
+
+- [x] **排序 Sort**
 
   - [x] **冒泡排序 BubbleSort**
-
   - [x] **选择排序 SelectSort**
-
   - [x] **插入排序 InsertSort**
-
   - [x] **希尔排序 ShellSort**
-  
   - [x] **快速排序 QuickSort**
-  
-  - [ ] **归并排序 MergeSort**
-  
-    
+  - [x] **归并排序 MergeSort**
+  - [x] **基数排序 RadixSort**
+  - [ ] 堆排序 
 
 
 <br>

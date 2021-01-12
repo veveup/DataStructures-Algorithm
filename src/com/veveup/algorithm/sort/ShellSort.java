@@ -31,6 +31,16 @@ public class ShellSort {
 //        System.out.println(Arrays.toString(arr));
     }
 
+    public static void ShellSort1re(int[] arr){
+        int tmp = 0;
+        for(int step = arr.length/2;step>0;step = step/2){
+            for(int i = step;i<arr.length;i++){
+
+            }
+        }
+
+    }
+
     public static void ShellSort2(int[] arr){
         for(int step=arr.length/2;step>0;step /= 2){
             for(int i = step;i<arr.length;i++){
@@ -46,4 +56,6 @@ public class ShellSort {
             }
         }
     }
+
+
 }

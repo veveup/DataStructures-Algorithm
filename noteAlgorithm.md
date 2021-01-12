@@ -154,6 +154,7 @@ public static void quickSort(int[] arr,int left,int right){
 **归并排序 MergeSort**
 
 ```
-
+// 分 治 思想
+// 先将大的问题/数据分成小的问题/数据 然后再将数据问题/数据合并
 ```
 
